@@ -3,7 +3,7 @@ instance_count = 0
 #
 #
 aap_workflow_job_template = {
-  name = "WF - Launched by TFE"
+  name = "WF-Launched by TFE"
   organization = "Default"
 }
 #

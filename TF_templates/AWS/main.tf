@@ -300,7 +300,7 @@ data "aap_inventory" "inventory" {
 }
 
 data "aap_workflow_job_template" "workflow_job_template" {
-  name              = "WF - Launched by TFE"
+  name              = "WF-Launched by TFE"
   organization_name = "Default"
 }
 
