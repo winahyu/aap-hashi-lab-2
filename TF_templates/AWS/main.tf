@@ -116,14 +116,14 @@ resource "vault_generic_secret" "ssh_private_key" {
   })
 }
 
-# Get latest RHEL AMI
-##data "aws_ami" "rhel" {
+## Get latest RHEL AMI
+## data "aws_ami" "rhel" {
 ##  most_recent = true
 ##  owners      = ["309956199498"] # Red Hat's official AWS account ID
   
 ##  filter {
 ##    name   = "name"
-##    values = ["RHEL-9*_HVM-*-x86_64-*"]
+##    values = ["RHEL-10*_HVM-*-x86_64-*"]
 ##  }
   
 ##  filter {
@@ -137,14 +137,14 @@ resource "vault_generic_secret" "ssh_private_key" {
 ##  }
 ##}
 
-data "aws_ami" "rhel" {
-  most_recent = true
+##data "aws_ami" "rhel" {
+##  most_recent = true
 ##  owners      = ["309956199498"] # Red Hat's official AWS account ID
-  owners      = ["629017097470"]
-  filter {
-    name   = "id"
-    values = ["ami-0b999ee292b09fdba"]
-  }
+##  owners      = ["629017097470"]
+##  filter {
+##    name   = "id"
+##    values = ["ami-0b999ee292b09fdba"]
+##  }
   
 ##  filter {
 ##    name   = "architecture"
@@ -278,8 +278,8 @@ resource "aws_security_group" "rhel_server" {
 # Create RHEL EC2 instance(s)
 resource "aws_instance" "rhel_server" {
   count                  = var.instance_count
-  ami                    = data.aws_ami.rhel.id
-  #ami                    = ami-03ea746da1a2e36e7
+  #ami                    = data.aws_ami.rhel.id
+  ami                    = "ami-03ea746da1a2e36e7"
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer.key_name
   subnet_id              = aws_subnet.public.id
