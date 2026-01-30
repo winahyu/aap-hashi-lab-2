@@ -117,25 +117,25 @@ resource "vault_generic_secret" "ssh_private_key" {
 }
 
 ## Get latest RHEL AMI
-## data "aws_ami" "rhel" {
-##  most_recent = true
-##  owners      = ["309956199498"] # Red Hat's official AWS account ID
+data "aws_ami" "rhel" {
+  most_recent = true
+  owners      = ["309956199498"] # Red Hat's official AWS account ID
   
-##  filter {
-##    name   = "name"
-##    values = ["RHEL-10*_HVM-*-x86_64-*"]
-##  }
+  filter {
+    name   = "name"
+    values = ["RHEL-10*_HVM-*-x86_64-*"]
+  }
   
-##  filter {
-##    name   = "architecture"
-##    values = ["x86_64"]
-##  }
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
   
-##  filter {
-##    name   = "virtualization-type"
-##    values = ["hvm"]
-##  }
-##}
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
 
 ##data "aws_ami" "rhel" {
 ##  most_recent = true
