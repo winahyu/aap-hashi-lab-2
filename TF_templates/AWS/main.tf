@@ -258,14 +258,15 @@ resource "aws_security_group" "rhel_server" {
 # Create RHEL EC2 instance(s)
 resource "aws_instance" "rhel_server" {
   count                  = var.instance_count
-  ami                    = data.aws_ami.rhel.id
+  #ami                    = data.aws_ami.rhel.id
+  ami                    = ami-03ea746da1a2e36e7
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer.key_name
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.rhel_server.id]
 
   root_block_device {
-    volume_size           = 20
+    volume_size           = 10
     volume_type           = "gp3"
     delete_on_termination = true
     encrypted             = true
