@@ -278,8 +278,8 @@ resource "aws_security_group" "rhel_server" {
 # Create RHEL EC2 instance(s)
 resource "aws_instance" "rhel_server" {
   count                  = var.instance_count
-  #ami                    = data.aws_ami.rhel.id
-  ami                    = "ami-03ea746da1a2e36e7"
+  ami                    = data.aws_ami.rhel.id
+  #ami                    = "ami-03ea746da1a2e36e7"
   instance_type          = var.instance_type
   key_name               = aws_key_pair.deployer.key_name
   subnet_id              = aws_subnet.public.id
