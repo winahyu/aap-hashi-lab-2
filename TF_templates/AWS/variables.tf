@@ -43,7 +43,8 @@ variable "subnet_cidr" {
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = "t2.medium"
+  #default     = "t2.medium"
+  default     = "t3.small"
 }
 
 variable "instance_count" {
