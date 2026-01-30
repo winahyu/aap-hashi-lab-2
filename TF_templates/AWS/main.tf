@@ -155,7 +155,7 @@ resource "vault_generic_secret" "ssh_private_key" {
 ##    name   = "virtualization-type"
 ##    values = ["hvm"]
 ##  }
-}
+##}
 
 # Create VPC
 resource "aws_vpc" "main" {
