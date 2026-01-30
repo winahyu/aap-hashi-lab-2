@@ -142,8 +142,8 @@ data "aws_ami" "rhel" {
 ##  owners      = ["309956199498"] # Red Hat's official AWS account ID
   owners      = ["629017097470"]
   filter {
-    name   = "name"
-    values = ["Amazon*Linux*2023*(kernel-6.1)"]
+    name   = "id"
+    values = ["ami-0b999ee292b09fdba"]
   }
   
 ##  filter {
